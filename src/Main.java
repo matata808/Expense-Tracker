@@ -1,5 +1,6 @@
 public class Main {
     public static void main(String[] args) {
+        //Testing args
 
         switch (args[0]) {
             case "add":
@@ -14,6 +15,8 @@ public class Main {
             case "update":
                 System.out.println("Enter amount to update");
                 break;
+            case "summary" : System.out.println("Enter amount to summary");
+            break;
             default:
                 System.out.println("Invalid input");
         }
