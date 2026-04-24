@@ -8,13 +8,31 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ExpenseStorage {
 
     public static final ArrayList<ExpenseData> expenses = new ArrayList<>();
+    //ids always start at 1 and not 0.
+    private int nextId = 1;
 
-    
+    public int getNextId() {
+        //increases ID once called
+        return nextId++;
+    }
 
+    public void add(ExpenseData e){
+        expenses.add(e);
+    }
+
+    public static List<ExpenseData> findAll(){
+        return new ArrayList<>(expenses);
+    }
+
+    /**
+     * creates and writes JSON objects inside a JSON array
+     * @throws IOException warns that file writing can fail (e.g. no disk space)
+     */
     public static void writer() throws IOException {
         JSONArray jsonArray = new JSONArray();
         for (ExpenseData data : expenses) {

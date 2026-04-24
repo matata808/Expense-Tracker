@@ -40,6 +40,8 @@ public class ExpenseData {
     public void setAmount(double amount) {
         this.amount = amount;
     }
+
+//TODO: implement the override method
 //    @Override
 //    public String toString() {}
 
