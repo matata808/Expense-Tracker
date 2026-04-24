@@ -15,6 +15,10 @@ public class ExpenseData {
         this.amount = amount;
     }
 
+    public ExpenseData() {
+
+    }
+
     public int getId() {
         return id;
     }
