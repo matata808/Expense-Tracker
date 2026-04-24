@@ -25,9 +25,9 @@ public class ExpenseStorage {
             jsonObject.put("Date", data.getDate());
             jsonArray.put(jsonObject);
         }
-        FileWriter fileWriter = new FileWriter("expenses.json");
-        fileWriter.write(jsonArray.toString());
-        fileWriter.close();
+        try (FileWriter fileWriter = new FileWriter("expenses.json")) {
+            fileWriter.write(jsonArray.toString());
+        }
 
     }
 
