@@ -1,47 +1,61 @@
 package expenses;
 
+import java.io.IOException;
 import java.time.LocalDateTime;
 
-public class ExpenseService  {
+public class ExpenseService {
     private final ExpenseStorage storage;
 
-    public ExpenseService(ExpenseStorage storage) {
-        this.storage = storage;
-    }
-
-    public ExpenseService(){
+    public ExpenseService() {
         this.storage = new ExpenseStorage();
     }
 
     /**
-     * adds an expense entry
-     * @param description Users description of the entry
-     * @param amount of money the user spent
+     * Adds an expense entry.
+     *
+     * @param description user description of the entry
+     * @param amount money the user spent
+     * @return the newly created expense entry
      */
-    public void add(String description, int amount){
-        //user cannot enter empty or invalid description/amount
-        if (description.isEmpty() || amount <= 0){ throw new IllegalArgumentException("Description and amount must be positive");}
+    public ExpenseData add(String description, int amount) {
+        String cleanDescription = "";
+        if (description != null) {
+            cleanDescription = description.trim();
+        }
+
+        if (cleanDescription.isEmpty()) {
+            throw new IllegalArgumentException("Description cannot be empty");
+        }
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Amount must be greater than zero.");
+        }
+
         ExpenseData data = new ExpenseData();
         data.setId(storage.getNextId());
-        data.setDescription(description);
+        data.setDescription(cleanDescription);
         data.setAmount(amount);
         data.setDate(LocalDateTime.now());
         storage.add(data);
+
+        try {
+            ExpenseStorage.writer();
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to persist expense data.", e);
+        }
+
+        return data;
     }
 
-    // is this really the safe implementation?
-    public void list(){
+    public void list() {
         ExpenseStorage.findAll().forEach(System.out::println);
     }
 
-    //TODO: implement summary() method
-
-    //TODO: implement delete() method
-
-    //TODO: implement summaryWithMonth() method
+    // TODO: implement summary() method
+    // TODO: implement delete() method
+    // TODO: implement summaryWithMonth() method
 
     @Override
-    public String toString(){
+    public String toString() {
         return "ExpenseService{entries=" + ExpenseStorage.findAll().size() + "}";
     }
 }
