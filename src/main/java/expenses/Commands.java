@@ -19,7 +19,6 @@ public class Commands {
         }
         }
 
-    //TODO: find a way to implement the commands
 
     /*
     these are the commands that the user can give in:
@@ -37,3 +36,4 @@ public class Commands {
     expense-tracker summary --month <month>
      */
 }
+

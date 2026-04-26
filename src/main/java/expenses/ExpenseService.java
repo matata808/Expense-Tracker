@@ -9,6 +9,10 @@ public class ExpenseService  {
         this.storage = storage;
     }
 
+    public ExpenseService(){
+        this.storage = new ExpenseStorage();
+    }
+
     /**
      * adds an expense entry
      * @param description Users description of the entry
@@ -36,4 +40,9 @@ public class ExpenseService  {
 
     //TODO: implement summaryWithMonth() method
 
+    @Override
+    public String toString(){
+        return "ExpenseService{entries=" + ExpenseStorage.findAll().size() + "}";
+    }
 }
+

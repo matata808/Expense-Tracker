@@ -1,10 +1,23 @@
+package main.java;
+
+import expenses.Commands;
+import expenses.ExpenseService;
+import expenses.ExpenseStorage;
+
+import java.io.IOException;
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        ExpenseStorage.reader();
         //Testing args
 
         switch (args[0]) {
             case "add":
-                System.out.println("Enter amount to add");
+                if(args.l)){
+                    ExpenseService service = new ExpenseService();
+                    service.add(args[2],Integer.parseInt(args[4]));
+
+            }
                 break;
             case "remove":
                 System.out.println("Enter amount to remove");
@@ -23,3 +36,4 @@ public class Main {
 
     }
 }
+
