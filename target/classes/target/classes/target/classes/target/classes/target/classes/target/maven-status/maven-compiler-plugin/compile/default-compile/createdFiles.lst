@@ -1,0 +1,6 @@
+expenses\Commands.class
+expenses\Commands$Flag.class
+expenses\ExpenseService.class
+expenses\ExpenseStorage.class
+main\Main.class
+expenses\ExpenseData.class

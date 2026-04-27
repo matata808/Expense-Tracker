@@ -1,6 +1,7 @@
 package expenses;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class ExpenseData {
     private int id;
@@ -41,9 +42,13 @@ public class ExpenseData {
         this.amount = amount;
     }
 
-//TODO: implement the override method
-//    @Override
-//    public String toString() {}
+    @Override
+    public String toString() {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        String dateString = (date == null) ? "-" : date.format(dtf);
+        String desc = (description == null) ? "" : description;
+        return String.format("Expense{id=%d, date=%s, description='%s', amount=%.2f}", id, dateString, desc, amount);
+    }
 
 }
 

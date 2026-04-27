@@ -39,7 +39,8 @@ public class Main {
                 System.out.println("Enter amount to remove");
                 break;
             case "list":
-                System.out.println("Enter amount to list");
+                ExpenseService service = new ExpenseService();
+                service.list();
                 break;
             case "update":
                 System.out.println("Enter amount to update");

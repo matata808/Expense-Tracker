@@ -2,6 +2,7 @@ package expenses;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class ExpenseService {
     private final ExpenseStorage storage;
@@ -47,16 +48,38 @@ public class ExpenseService {
     }
 
     public void list() {
-        ExpenseStorage.findAll().forEach(System.out::println);
+        System.out.print(this);
     }
 
     // TODO: implement summary() method
-    // TODO: implement delete() method
+    // TODO: implement remove() method
+    public void remove(int id){
+        ExpenseStorage.expenses.removeIf(e -> e.getId() == id);
+        try {
+            ExpenseStorage.writer();
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to persist expense data.", e);
+        }
+    }
     // TODO: implement summaryWithMonth() method
 
     @Override
     public String toString() {
-        return "ExpenseService{entries=" + ExpenseStorage.findAll().size() + "}";
+        StringBuilder sb = new StringBuilder();
+        sb.append("# ID  Date       Description  Amount ").append(System.lineSeparator());
+        sb.append("# -----------------------------------").append(System.lineSeparator());
+
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        for (ExpenseData data : ExpenseStorage.expenses) {
+            String date = data.getDate() == null ? "-" : data.getDate().format(dtf);
+            sb.append("# ")
+                    .append(data.getId()).append(' ')
+                    .append(date).append(' ')
+                    .append(data.getDescription()).append(' ')
+                    .append(data.getAmount())
+                    .append(System.lineSeparator());
+        }
+        return sb.toString();
     }
 }
 

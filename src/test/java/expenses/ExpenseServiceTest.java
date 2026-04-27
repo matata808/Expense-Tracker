@@ -14,6 +14,7 @@ class ExpenseServiceTest {
     void resetState() throws Exception {
         // shared static state -> isolate tests
         ExpenseStorage.expenses.clear();
+        ExpenseStorage.resetNextId(); // reset ID counter
 
         // avoid cross-test interference on the persistence file
         Files.deleteIfExists(Path.of("expenses.json"));
