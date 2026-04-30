@@ -27,11 +27,11 @@ public class ExpenseStorage {
         nextId = 1;
     }
 
-    public void add(ExpenseData e){
+    public void add(ExpenseData e) {
         expenses.add(e);
     }
 
-    public static List<ExpenseData> findAll(){
+    public static List<ExpenseData> findAll() {
         return new ArrayList<>(expenses);
     }
 
@@ -58,7 +58,6 @@ public class ExpenseStorage {
     }
 
 
-
     public static void reader() throws IOException {
         if (!expenses.isEmpty()) {
             return;
@@ -67,7 +66,7 @@ public class ExpenseStorage {
         if (!java.nio.file.Files.exists(filePath)) {
             return; // file doesn't exist, skip loading
         }
-        
+
         BufferedReader bufferedReader = new BufferedReader(new FileReader("expenses.json"));
         StringBuilder builder = new StringBuilder();
         String line;
@@ -93,7 +92,7 @@ public class ExpenseStorage {
                 }
             }
             expenses.add(data);
-            
+
             // track highest ID to avoid duplicates
             if (data.getId() >= nextId) {
                 nextId = data.getId() + 1;
@@ -101,9 +100,6 @@ public class ExpenseStorage {
         }
 
     }
-
-
-
 
 
 }
