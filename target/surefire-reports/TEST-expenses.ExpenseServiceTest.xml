@@ -1,64 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="expenses.ExpenseServiceTest" time="0.062" tests="3" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="expenses.ExpenseServiceTest" time="0.061" tests="4" errors="0" skipped="0" failures="0">
   <properties>
-    <property name="java.specification.version" value="21"/>
+    <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
     <property name="java.class.path" value="C:\Users\fardy\Expense-Tracker\target\test-classes;C:\Users\fardy\Expense-Tracker\target\classes;C:\Users\fardy\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.3\junit-jupiter-5.10.3.jar;C:\Users\fardy\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.3\junit-jupiter-api-5.10.3.jar;C:\Users\fardy\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\fardy\.m2\repository\org\junit\platform\junit-platform-commons\1.10.3\junit-platform-commons-1.10.3.jar;C:\Users\fardy\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\fardy\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.3\junit-jupiter-params-5.10.3.jar;C:\Users\fardy\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.3\junit-jupiter-engine-5.10.3.jar;C:\Users\fardy\.m2\repository\org\junit\platform\junit-platform-engine\1.10.3\junit-platform-engine-1.10.3.jar;C:\Users\fardy\.m2\repository\org\json\json\20240303\json-20240303.jar;"/>
-    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.vendor" value="Microsoft"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
-    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="java.vendor.url" value="https://www.microsoft.com"/>
     <property name="user.timezone" value="Europe/Berlin"/>
     <property name="os.name" value="Windows 11"/>
-    <property name="java.vm.specification.version" value="21"/>
-    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="java.vm.specification.version" value="17"/>
     <property name="user.country" value="DE"/>
-    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21\bin"/>
-    <property name="sun.java.command" value="C:\Users\fardy\AppData\Local\Temp\surefire14527398302281280888\surefirebooter-20260427204647233_3.jar C:\Users\fardy\AppData\Local\Temp\surefire14527398302281280888 2026-04-27T20-46-47_101-jvmRun1 surefire-20260427204647233_1tmp surefire_0-20260427204647233_2tmp"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="C:\Users\fardy\.jdks\ms-17.0.18\bin"/>
+    <property name="sun.java.command" value="C:\Users\fardy\AppData\Local\Temp\surefire14246943000274862654\surefirebooter-20260501000942671_3.jar C:\Users\fardy\AppData\Local\Temp\surefire14246943000274862654 2026-05-01T00-09-42_465-jvmRun1 surefire-20260501000942671_1tmp surefire_0-20260501000942671_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\fardy\Expense-Tracker\target\test-classes;C:\Users\fardy\Expense-Tracker\target\classes;C:\Users\fardy\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.3\junit-jupiter-5.10.3.jar;C:\Users\fardy\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.3\junit-jupiter-api-5.10.3.jar;C:\Users\fardy\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\fardy\.m2\repository\org\junit\platform\junit-platform-commons\1.10.3\junit-platform-commons-1.10.3.jar;C:\Users\fardy\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\fardy\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.3\junit-jupiter-params-5.10.3.jar;C:\Users\fardy\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.3\junit-jupiter-engine-5.10.3.jar;C:\Users\fardy\.m2\repository\org\junit\platform\junit-platform-engine\1.10.3\junit-platform-engine-1.10.3.jar;C:\Users\fardy\.m2\repository\org\json\json\20240303\json-20240303.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\fardy"/>
     <property name="user.language" value="de"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
-    <property name="java.version.date" value="2025-07-15"/>
-    <property name="java.home" value="C:\Program Files\Java\jdk-21"/>
+    <property name="java.version.date" value="2026-01-20"/>
+    <property name="java.home" value="C:\Users\fardy\.jdks\ms-17.0.18"/>
     <property name="file.separator" value="\"/>
+    <property name="style.color" value="always"/>
     <property name="basedir" value="C:\Users\fardy\Expense-Tracker"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\fardy\AppData\Local\Temp\surefire14527398302281280888\surefirebooter-20260427204647233_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\fardy\AppData\Local\Temp\surefire14246943000274862654\surefirebooter-20260501000942671_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="java.runtime.version" value="21.0.8+12-LTS-250"/>
+    <property name="java.runtime.version" value="17.0.18+8-LTS"/>
     <property name="user.name" value="fardy"/>
-    <property name="stdout.encoding" value="Cp1252"/>
     <property name="path.separator" value=";"/>
     <property name="os.version" value="10.0"/>
-    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="file.encoding" value="UTF-8"/>
-    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Microsoft-13106358"/>
+    <property name="maven.ext.class.path" value="C:\Users\fardy\AppData\Roaming\JetBrains\IntelliJIdea2025.2\plugins\maven\lib\maven-event-listener.jar"/>
     <property name="localRepository" value="C:\Users\fardy\.m2\repository"/>
-    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.vendor.url.bug" value="https://github.com/microsoft/openjdk/issues"/>
     <property name="java.io.tmpdir" value="C:\Users\fardy\AppData\Local\Temp\"/>
-    <property name="java.version" value="21.0.8"/>
+    <property name="idea.version" value="2025.2.6.1"/>
+    <property name="java.version" value="17.0.18"/>
     <property name="user.dir" value="C:\Users\fardy\Expense-Tracker"/>
     <property name="os.arch" value="amd64"/>
+    <property name="jansi.passthrough" value="true"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="native.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk-21\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Users\fardy\flutter\bin;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\chocolatey\bin;C:\Program Files\Mosquitto;C:\Users\fardy\AppData\Local\Programs\Python\Python313;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\MiKTeX\miktex\bin\x64\;C:\Program Files\dotnet\;C:\Program Files\Neovim\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Users\fardy\AppData\Local\Programs\Python\Python313\Scripts\;C:\Users\fardy\AppData\Local\Programs\Python\Python313\;C:\Users\fardy\AppData\Local\Programs\Python\Launcher\;C:\Users\fardy\AppData\Local\Microsoft\WindowsApps;C:\Users\fardy\AppData\Local\GitHubDesktop\bin;C:\Users\fardy\AppData\Local\Programs\Microsoft VS Code\bin;C:\tools\dart-sdk\bin;C:\Users\fardy\AppData\Local\Pub\Cache\bin;C:\Users\fardy\AppData\Local\Pandoc\;C:\Program Files\MiKTeX\miktex\bin\x64;C:\Program Files (x86)\Nmap;."/>
+    <property name="java.library.path" value="C:\Users\fardy\.jdks\ms-17.0.18\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Users\fardy\flutter\bin;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\chocolatey\bin;C:\Program Files\Mosquitto;C:\Users\fardy\AppData\Local\Programs\Python\Python313;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\MiKTeX\miktex\bin\x64\;C:\Program Files\dotnet\;C:\Program Files\Neovim\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Users\fardy\AppData\Local\Programs\Python\Python313\Scripts\;C:\Users\fardy\AppData\Local\Programs\Python\Python313\;C:\Users\fardy\AppData\Local\Programs\Python\Launcher\;C:\Users\fardy\AppData\Local\Microsoft\WindowsApps;C:\Users\fardy\AppData\Local\GitHubDesktop\bin;C:\Users\fardy\AppData\Local\Programs\Microsoft VS Code\bin;C:\tools\dart-sdk\bin;C:\Users\fardy\AppData\Local\Pub\Cache\bin;C:\Users\fardy\AppData\Local\Pandoc\;C:\Program Files\MiKTeX\miktex\bin\x64;C:\Program Files (x86)\Nmap;."/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
-    <property name="stderr.encoding" value="Cp1252"/>
-    <property name="java.vendor" value="Oracle Corporation"/>
-    <property name="java.vm.version" value="21.0.8+12-LTS-250"/>
+    <property name="java.vendor" value="Microsoft"/>
+    <property name="java.vm.version" value="17.0.18+8-LTS"/>
+    <property name="java.specification.maintenance.version" value="1"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
-    <property name="java.class.version" value="65.0"/>
+    <property name="maven.repo.local" value="C:\Users\fardy\.m2\repository"/>
+    <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="add_validInput_createsExpenseWithIdAndTrimmedDescription" classname="expenses.ExpenseServiceTest" time="0.038"/>
-  <testcase name="add_nonPositiveAmount_throwsIllegalArgumentException" classname="expenses.ExpenseServiceTest" time="0.004"/>
-  <testcase name="add_blankDescription_throwsIllegalArgumentException" classname="expenses.ExpenseServiceTest" time="0.002"/>
+  <testcase name="add_validInput_createsExpenseWithIdAndTrimmedDescription" classname="expenses.ExpenseServiceTest" time="0.033"/>
+  <testcase name="add_nonPositiveAmount_throwsIllegalArgumentException" classname="expenses.ExpenseServiceTest" time="0.002"/>
+  <testcase name="remove_validInput_createsExpenseWithIdAndTrimmedDescription" classname="expenses.ExpenseServiceTest" time="0.004"/>
+  <testcase name="add_blankDescription_throwsIllegalArgumentException" classname="expenses.ExpenseServiceTest" time="0.001"/>
 </testsuite>
