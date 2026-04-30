@@ -102,17 +102,7 @@ public class ExpenseStorage {
     }
 
 
-    @Override
-    public String toString() {
-        System.out.println(" ID  Date       Description  Amount ");
-        System.out.println(" -----------------------------------");
-        for (ExpenseData data : expenses) {
-            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-            String date = data.getDate() == null ? "-" : data.getDate().format(dtf);
-            System.out.println("# " + data.getId() + " " + date + " " + data.getAmount() + " " + data.getDescription());
-        }
-        return expenses.toString();
-    }
+
 
 
 }
