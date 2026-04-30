@@ -56,7 +56,8 @@ public class Main {
                 System.out.println("Enter amount to update");
                 break;
             case "summary":
-                System.out.println("Enter amount to summary");
+                ExpenseService expenseSummary = new ExpenseService();
+                expenseSummary.summary();
                 break;
             default:
                 System.out.println("Invalid input");
