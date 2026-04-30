@@ -104,8 +104,8 @@ public class ExpenseStorage {
 
     @Override
     public String toString() {
-        System.out.println("# ID  Date       Description  Amount ");
-        System.out.println("# -----------------------------------");
+        System.out.println(" ID  Date       Description  Amount ");
+        System.out.println(" -----------------------------------");
         for (ExpenseData data : expenses) {
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
             String date = data.getDate() == null ? "-" : data.getDate().format(dtf);
