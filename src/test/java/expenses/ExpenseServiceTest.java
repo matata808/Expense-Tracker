@@ -49,5 +49,17 @@ class ExpenseServiceTest {
 
         assertThrows(IllegalArgumentException.class, () -> service.add("Coffee", 0));
     }
+
+    @Test
+    void remove_validInput_createsExpenseWithIdAndTrimmedDescription() {
+        ExpenseService service = new ExpenseService();
+        ExpenseData created = service.add("Coffee", 4);
+        assertNotNull(created);
+        assertTrue(created.getId() > 0, "ID should be assigned (> 0)");
+        assertEquals("Coffee", created.getDescription(), "Description should be trimmed");
+        assertEquals(4.0, created.getAmount(), 0.0001);
+        assertNotNull(created.getDate());
+        assertEquals(1, ExpenseStorage.findAll().size());
+    }
 }
 
