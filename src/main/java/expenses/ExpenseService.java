@@ -52,7 +52,13 @@ public class ExpenseService {
     }
 
     // TODO: implement summary() method
-    // TODO: implement remove() method
+    public void summary(){
+        double total = 0.0;
+        for (ExpenseData data : ExpenseStorage.expenses) {
+            total += data.getAmount();
+        }
+        System.out.println("Total expenses: " + total);
+    }
     public void remove(int id){
         ExpenseStorage.expenses.removeIf(e -> e.getId() == id);
         try {
