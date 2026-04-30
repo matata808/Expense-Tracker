@@ -35,8 +35,18 @@ public class Main {
                     System.out.println(e.getMessage());
                 }
                 break;
-            case "remove":
-                System.out.println("Enter amount to remove");
+            case "delete":
+                if(args.length != 3 || !args[1].equals(Commands.Flag.ID.getValue())){
+                    System.out.println("Usage: delete --id <id>");
+                    break;
+                }
+                try {
+                    ExpenseService expenseService = new ExpenseService();
+                    expenseService.remove(Integer.parseInt(args[2]));
+                    System.out.println("Expense deleted successfully (ID: " + args[2] + ")");
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
                 break;
             case "list":
                 ExpenseService service = new ExpenseService();
