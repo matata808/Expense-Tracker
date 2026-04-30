@@ -72,8 +72,8 @@ public class ExpenseService {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("# ID  Date       Description  Amount ").append(System.lineSeparator());
-        sb.append("# -----------------------------------").append(System.lineSeparator());
+        sb.append(" ID  Date       Description  Amount ").append(System.lineSeparator());
+        sb.append(" -----------------------------------").append(System.lineSeparator());
 
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         for (ExpenseData data : ExpenseStorage.expenses) {
