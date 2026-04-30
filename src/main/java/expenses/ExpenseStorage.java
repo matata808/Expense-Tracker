@@ -37,6 +37,7 @@ public class ExpenseStorage {
 
     /**
      * creates and writes JSON objects inside a JSON array
+     *
      * @throws IOException warns that file writing can fail (e.g. no disk space)
      */
     public static void writer() throws IOException {
