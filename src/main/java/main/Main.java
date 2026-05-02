@@ -58,6 +58,19 @@ public class Main {
             case "summary":
                 ExpenseService expenseSummary = new ExpenseService();
                 expenseSummary.summary();
+
+                if(args.length == 3 && args[1].equals(Commands.Flag.MONTH.getValue())){
+                    try {
+                        int month = Integer.parseInt(args[2]);
+                        double total = expenseSummary.summaryWithMonth(month);
+                        System.out.println("Total expenses for month " + month + ": €" + total);
+                    } catch (NumberFormatException e) {
+                        System.out.println("Please enter a valid month number.");
+                    } catch (IllegalArgumentException e){
+                        System.out.println(e.getMessage());
+                    }
+                }
+
                 break;
             default:
                 System.out.println("Invalid input");
