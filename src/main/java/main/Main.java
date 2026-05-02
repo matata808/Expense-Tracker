@@ -52,9 +52,6 @@ public class Main {
                 ExpenseService service = new ExpenseService();
                 service.list();
                 break;
-            case "update":
-                System.out.println("Enter amount to update");
-                break;
             case "summary":
                 ExpenseService expenseSummary = new ExpenseService();
                 expenseSummary.summary();
