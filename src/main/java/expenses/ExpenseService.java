@@ -59,6 +59,20 @@ public class ExpenseService {
         }
         System.out.println("Total expenses: " + total);
     }
+
+    public double summaryWithMonth(int month){
+        if(month < 1 || month > 12) throw new IllegalArgumentException("Month must be between 1 and 12.");
+
+        double total = 0;
+
+        for(ExpenseData data : ExpenseStorage.expenses){
+            if(data.getDate() != null && data.getDate().getMonthValue() == month){
+                total+= data.getAmount();
+            }
+
+        }
+        return total;
+    }
     public void remove(int id){
         ExpenseStorage.expenses.removeIf(e -> e.getId() == id);
         try {
