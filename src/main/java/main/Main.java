@@ -14,6 +14,22 @@ public class Main {
 
 
         switch (args[0]) {
+            case "help":
+                System.out.println("""
+                             add --description <description> --amount <amount>
+                        
+                             update --id <id> [--description <description>] [--amount <amount>]
+                        
+                             delete --id <id>
+                        
+                             list
+                        
+                             summary
+                        
+                             summary --month <month>
+                        """);
+                break;
+
             case "add":
                 if (args.length != 5 || !args[1].equals(Commands.Flag.DESCRIPTION.getValue()) || !args[3].equals(Commands.Flag.AMOUNT.getValue())) {
                     System.out.println("Usage: add --description <description> --amount <amount>");
@@ -21,18 +37,41 @@ public class Main {
                 }
                 try {
                     ExpenseService expenseService = new ExpenseService();
-                    ExpenseData created = expenseService.add(args[2], Integer.parseInt(args[4]));
+                    ExpenseData created = expenseService.add(args[2], Double.parseDouble(args[4]));
 
                     System.out.println("Expense added successfully (ID: " + created.getId() + ")");
                 } catch (NumberFormatException e) {
-                    System.out.println("Please enter an integer");
+                    System.out.println("Please enter a valid double/int");
 
                 } catch (IllegalArgumentException e) {
                     System.out.println(e.getMessage());
                 }
                 break;
+
+            case "update":
+                if (args.length != 7
+                        || !args[1].equals(Commands.Flag.ID.getValue())
+                        || !args[3].equals(Commands.Flag.DESCRIPTION.getValue())
+                        || !args[5].equals(Commands.Flag.AMOUNT.getValue())) {
+                    System.out.println("Usage: update --id <id> --description <description> --amount <amount>");
+                    break;
+                }
+
+                try {
+                    ExpenseService xService = new ExpenseService();
+                    ExpenseData data = xService.update(
+                            Integer.parseInt(args[2]),
+                            args[4],
+                            Double.parseDouble(args[6])
+                    );
+                    System.out.println("Expense updated successfully(ID: " + data.getId() + " )");
+                } catch (NumberFormatException e) {
+                    throw new RuntimeException(e);
+                }
+                break;
+
             case "delete":
-                if(args.length != 3 || !args[1].equals(Commands.Flag.ID.getValue())){
+                if (args.length != 3 || !args[1].equals(Commands.Flag.ID.getValue())) {
                     System.out.println("Usage: delete --id <id>");
                     break;
                 }
@@ -49,17 +88,18 @@ public class Main {
                 service.list();
                 break;
             case "summary":
+                //TODO: Summary with month function.
                 ExpenseService expenseSummary = new ExpenseService();
                 expenseSummary.summary();
 
-                if(args.length == 3 && args[1].equals(Commands.Flag.MONTH.getValue())){
+                if (args.length == 3 && args[1].equals(Commands.Flag.MONTH.getValue())) {
                     try {
                         int month = Integer.parseInt(args[2]);
                         double total = expenseSummary.summaryWithMonth(month);
                         System.out.println("Total expenses for month " + month + ": €" + total);
                     } catch (NumberFormatException e) {
                         System.out.println("Please enter a valid month number.");
-                    } catch (IllegalArgumentException e){
+                    } catch (IllegalArgumentException e) {
                         System.out.println(e.getMessage());
                     }
                 }
