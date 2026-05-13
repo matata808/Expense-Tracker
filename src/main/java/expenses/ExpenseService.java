@@ -3,6 +3,7 @@ package expenses;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.TemporalAmount;
 
 public class ExpenseService {
     private final ExpenseStorage storage;
@@ -18,7 +19,8 @@ public class ExpenseService {
      * @param amount money the user spent
      * @return the newly created expense entry
      */
-    public ExpenseData add(String description, int amount) {
+    public ExpenseData add(String description, double amount) {
+
         String cleanDescription = "";
         if (description != null) {
             cleanDescription = description.trim();
@@ -51,7 +53,6 @@ public class ExpenseService {
         System.out.print(this);
     }
 
-    // TODO: implement summary() method
     public void summary(){
         double total = 0.0;
         for (ExpenseData data : ExpenseStorage.expenses) {
@@ -100,6 +101,40 @@ public class ExpenseService {
                     .append(System.lineSeparator());
         }
         return sb.toString();
+    }
+
+
+    public ExpenseData update(int id, String description, double amount) {
+        String cleanDescription = "";
+
+        if (description != null) {
+            cleanDescription = description.trim();
+        }
+
+        if (cleanDescription.isEmpty()) {
+            throw new IllegalArgumentException("Description cannot be empty");
+        }
+
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Amount must be greater than zero.");
+        }
+
+        for (ExpenseData data : ExpenseStorage.expenses) {
+            if (data.getId() == id) {
+                data.setDescription(cleanDescription);
+                data.setAmount(amount);
+
+                try {
+                    ExpenseStorage.writer();
+                } catch (IOException e) {
+                    throw new RuntimeException("Failed to persist expense data.", e);
+                }
+
+                return data;
+            }
+        }
+
+        throw new IllegalArgumentException("No expense found with ID: " + id);
     }
 }
 
