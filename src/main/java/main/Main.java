@@ -12,10 +12,6 @@ public class Main {
         ExpenseStorage.reader();
         //Testing args
 
-        if (args.length == 0) {
-            System.out.println("Usage: add --description <description> --amount <amount>");
-            return;
-        }
 
         switch (args[0]) {
             case "add":
